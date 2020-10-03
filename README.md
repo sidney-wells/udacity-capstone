@@ -154,5 +154,5 @@ Response:
 To run the tests, use test_app.py with below command: python test_app.py
 
 # Author
-Sidney Wells authored this API with only backend features present in flaskr, test_app.py and database folders. Authentication can be found in auth folder.
+Sidney authored this API with only backend features present in flaskr, test_app.py and database folders. Authentication can be found in auth folder.
 
