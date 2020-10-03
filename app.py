@@ -1,8 +1,8 @@
 import os
 from flask import Flask, request, abort, jsonify, json
 from flask_cors import CORS
-from .auth.auth import AuthError, requires_auth
-from .database.models import setup_db, Workout, Exercise, Link
+from auth.auth import AuthError, requires_auth
+from database.models import setup_db, Workout, Exercise, Link
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
