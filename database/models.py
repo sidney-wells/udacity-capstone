@@ -6,7 +6,7 @@ import json
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
-database_path = os.getenv('DATABASE_URI')
+database_path = os.getenv('DATABASE_URL')
 
 db = SQLAlchemy()
 

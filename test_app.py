@@ -22,7 +22,7 @@ def set_auth_header(role):
 class Tests(unittest.TestCase):
     def setUp(self):
         """Define test variables and initialize app."""
-        self.database_path=os.getenv('DATABASE_URI')
+        self.database_path=os.getenv('DATABASE_URL')
         self.app = app.test_client()
         db.drop_all()
         db.create_all()
