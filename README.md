@@ -18,7 +18,7 @@ Client: Can view workouts
 
 Trainer: All permissions including getting workouts and exercises, adding workouts and exercises, updating exercises, and deleting workouts.
 
-The Authentication is carried out by third-party authentication tool which is Auth0 The Auth0 domain and api audience can be found in setup.sh.
+The Authentication is carried out by third-party authentication tool which is Auth0. The Auth0 domain, api audience, and valid jwt access tokens can be found in setup.sh.
 
 # End-Points
 
