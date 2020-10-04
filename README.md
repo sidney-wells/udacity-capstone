@@ -1,9 +1,9 @@
 # YOORS APP
-This casting agency models a company which is responsible for creating movies and managing actors by assigning movies to them.
+This exercise and workout app tracker helps trainers create exercises for workouts that they can provide to their clients.
 
-Yoors is all about enabling personal trainers to create exercises and optimal workouts that can be assigned to their clients who can perform those workouts
+Yoors is all about enabling personal trainers to create optimal workouts that can be provided to clients who can try those workouts. First, the trainer needs to create at least three exercises. Then, they will be able to add three exercises to their workout for clients. 
 
-This Application is hosted on Heroku: https://starcast-agency.herokuapp.com
+This Application is hosted on Heroku: https://yoors-app.herokuapp.com
 
 # Motivation
 Yoors App is my final project for the Udacity Full Stack Nanodegree.
