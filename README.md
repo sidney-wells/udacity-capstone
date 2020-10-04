@@ -15,7 +15,9 @@ These are listed in requirements.txt It can be installed with pip install -r req
 Yoors App has 2 types of users:
 
 Client: Can view workouts
+
 Trainer: All permissions including getting workouts and exercises, adding workouts and exercises, updating exercises, and deleting workouts.
+
 The Authentication is carried out by third-party authentication tool which is Auth0 The Auth0 domain and api audience can be found in setup.sh.
 
 # End-Points
@@ -56,7 +58,7 @@ Response:
 
 ## POST /workouts
 * General
-    * This end point is used to post a new workout.
+    * This end point is used to post a new workout. However, the trainer must create three exercises in order to post a workout. 
 * Sample
 Data: json={ "theme": "new workout1", "description": "new description1", "exerciseOne": "burpees" "exerciseTwo": "squats", "exerciseThree": "jumps" }
 Response: {
@@ -154,5 +156,5 @@ Response:
 To run the tests, use test_app.py with below command: python test_app.py
 
 # Author
-Sidney authored this API with only backend features present in flaskr, test_app.py and database folders. Authentication can be found in auth folder.
+Sidney Wells authored this API with only backend features present in flaskr, test_app.py and database folders. Authentication can be found in auth folder.
 
