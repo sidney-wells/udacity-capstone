@@ -23,6 +23,10 @@ def after_request(response):
         'GET,POST,PUT,DELETE,OPTIONS')
     return response
 
+@app.route('/', methods=['POST', 'GET'])
+def health():
+    return jsonify("Welcome to Yoors App")
+
 @app.route('/workouts')
 @requires_auth('get:workouts')
 def workouts(*args, **kwargs):
