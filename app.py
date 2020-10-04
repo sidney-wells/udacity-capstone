@@ -23,9 +23,11 @@ def after_request(response):
         'GET,POST,PUT,DELETE,OPTIONS')
     return response
 
+
 @app.route('/', methods=['POST', 'GET'])
 def health():
     return jsonify("Welcome to Yoors App")
+
 
 @app.route('/workouts')
 @requires_auth('get:workouts')
@@ -61,6 +63,7 @@ def workouts(*args, **kwargs):
         'total_workouts': len(Workout.query.all())
     })
 
+
 @app.route('/exercises')
 @requires_auth("get:exercises")
 def exercises(*args, **kwargs):
@@ -82,6 +85,7 @@ def exercises(*args, **kwargs):
         'exercises': data,
         'total_exercises': len(Exercise.query.all())
     })
+
 
 @app.route('/workouts', methods=['POST'])
 @requires_auth("post:workouts")
@@ -156,6 +160,7 @@ def post_workout(*args, **kwargs):
     except():
         abort(422)
 
+
 @app.route('/exercises', methods=['POST'])
 @requires_auth('post:exercises')
 def post_exercise(*args, **kwargs):
@@ -188,6 +193,7 @@ def post_exercise(*args, **kwargs):
         })
     except():
         abort(422)
+
 
 @app.route('/exercises/<int:exercise_id>/edit', methods=['PATCH'])
 @requires_auth('patch:exercises')
@@ -226,6 +232,7 @@ def edit_exercise(*args, **kwargs):
     except():
         abort(422)
 
+
 @app.route('/workouts/<int:workout_id>', methods=['DELETE'])
 @requires_auth('delete:workouts')
 def delete_workout(*args, **kwargs):
@@ -246,6 +253,7 @@ def delete_workout(*args, **kwargs):
     except():
         abort(422)
 
+
 # ERROR HANDLING
 @app.errorhandler(422)
 def unprocessable(error):
@@ -255,6 +263,7 @@ def unprocessable(error):
         'message': "unprocessable"
     }), 422
 
+
 @app.errorhandler(404)
 def not_found(error):
     return jsonify({
@@ -262,6 +271,7 @@ def not_found(error):
         'error': 404,
         'message': "resource not found"
     }), 404
+
 
 @app.errorhandler(400)
 def bad_request(error):
@@ -271,6 +281,7 @@ def bad_request(error):
         'message': "bad request"
     }), 400
 
+
 @app.errorhandler(405)
 def not_found(error):
     return jsonify({
@@ -279,12 +290,13 @@ def not_found(error):
         'message': "method not allowed"
     }), 405
 
+
 @app.errorhandler(AuthError)
 def auth_failed(AuthError):
     res = jsonify(AuthError.error)
     res.status_code = AuthError.status_code
     return res
 
+
 if __name__ == '__main__':
     app.run()
-

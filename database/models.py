@@ -27,7 +27,7 @@ def db_drop_and_create_all():
 
 
 class Workout(db.Model):
-    __tablename__='workout'
+    __tablename__ = 'workout'
 
     id = Column(Integer, primary_key=True)
     theme = Column(String)
@@ -58,7 +58,7 @@ class Workout(db.Model):
 
 
 class Exercise(db.Model):
-    __tablename__='exercise'
+    __tablename__ = 'exercise'
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -89,6 +89,6 @@ class Exercise(db.Model):
 
 
 class Link(db.Model):
-    __tablename__='link'
+    __tablename__ = 'link'
     workout_id = Column(Integer, ForeignKey('workout.id'), primary_key=True)
     exercise_id = Column(Integer, ForeignKey('exercise.id'), primary_key=True)

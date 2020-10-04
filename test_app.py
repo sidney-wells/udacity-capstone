@@ -22,7 +22,7 @@ def set_auth_header(role):
 class Tests(unittest.TestCase):
     def setUp(self):
         """Define test variables and initialize app."""
-        self.database_path=os.getenv('DATABASE_URL')
+        self.database_path = os.getenv('DATABASE_URL')
         self.app = app.test_client()
         db.drop_all()
         db.create_all()
@@ -267,7 +267,7 @@ class Tests(unittest.TestCase):
             "exerciseThree": "jumps"
         }
         self.app.post('/workouts', json=data,
-                           headers=set_auth_header('trainer'))
+                        headers=set_auth_header('trainer'))
         workout_id = Workout.query.first().id
         response = self.app.delete(
                 f'/workouts/{workout_id}', json=data,
